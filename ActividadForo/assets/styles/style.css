@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
+}
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 50px 1fr 50px;
+    grid-template-areas: 
+    "zh"
+    "zn"
+    "zs"
+    "zf";
+}
+
+
+header{
+    grid-area: zh;
+    background-color: lightgreen; 
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+#div_foto>img{
+    height: 100%;
+}
+#div_foto{
+    height: 90%;
+}
+nav{
+    grid-area: zn;
+    background-color: rgb(165, 165, 165);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
+}
+
+section {
+    grid-area: zs;
+    background-color: white; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#form_deportes > table{
+    width: 300px;
+    border: 1px solid black;
+}
+
+#form_deportes td{
+    width: 25%;
+}
+section > div {
+    border: 1px solid black;
+    height: 200px;
+    width: 100%;
+    padding-bottom: 20px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    grid-area: zf;
+    background-color: lightgreen; 
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_modal{
+    width: 100%;
+    height: 100%;
+    /* Referido a la posicion izquierda */
+    /* Vamos a acomodar el div modal al section */
+    position: absolute;
+    top:100px;
+    left: 0;
+    z-index: 10;
+    background-color: rgb(190, 248, 190);
+    /* Oculta la ventana */
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#form_login{
+    border: 1px solid black;
+    padding: 30px;
+    font-size: 20px;
+
+}
+
+#div_error{
+    color: red;
+    font-weight: bold;
+}
+
+.centrado{
+    text-align: center;
+}
