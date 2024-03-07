@@ -5,7 +5,7 @@
     font-family: 'Montserrat', sans-serif;
 
 }
-body{
+#body_index{
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
@@ -26,8 +26,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
 }
 
 #input_div_escribir{
@@ -105,8 +103,6 @@ nav{
     grid-area: zn;
     background-color: #1F3539;
     border-top: 3px solid #324E53;
-    border-bottom-right-radius: 25px ;
-    border-bottom-left-radius: 25px ;
     display: flex;
     align-items: center;
     color: white;
@@ -138,7 +134,7 @@ nav{
 
 section {
     grid-area: zs;
-    background-color: white; 
+    background-color: #1F3539; 
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -147,6 +143,7 @@ section {
 
 .mensaje {
     border: 2px solid rgb(82, 77, 77);
+    background-color: white;
     height: auto;
     width: 90%;
     margin: 20px;
@@ -193,15 +190,18 @@ section {
 }
 
 
+/* ESTILOS LOGIN_HTML*/
 
-footer{
-    grid-area: zf;
-    background-color: #1F3539; 
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#body_login{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px 120px 1fr;
+    grid-template-areas: 
+    "zh"
+    "zn"
+    "zs";
+
 }
+
 
