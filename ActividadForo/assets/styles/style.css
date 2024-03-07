@@ -9,12 +9,43 @@ body{
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 130px 130px 1fr 50px;
+    grid-template-rows: 120px 120px 1fr;
     grid-template-areas: 
     "zh"
     "zn"
-    "zs"
-    "zf";
+    "zs";
+}
+
+#div_escribir_mensaje{
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    background-color: #1f3539;
+    position: sticky;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+#input_div_escribir{
+    width: 62%;
+    height: auto;
+    padding: 13px;
+    font-size: 17px;
+    border-radius: 10px;
+}
+
+#boton_enviar_div_escribir{
+    width: 20%;
+    padding: 10px;
+    background-color: #0CA789;
+    border: 1px solid rgba(0, 0, 0, 0);
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
 }
 
 
@@ -45,6 +76,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: right;
+    padding-right: 5%;
     
 }
 
@@ -73,8 +105,8 @@ nav{
     grid-area: zn;
     background-color: #1F3539;
     border-top: 3px solid #324E53;
-    border-bottom-right-radius: 10px ;
-    border-bottom-left-radius: 10px ;
+    border-bottom-right-radius: 25px ;
+    border-bottom-left-radius: 25px ;
     display: flex;
     align-items: center;
     color: white;
@@ -164,42 +196,12 @@ section {
 
 footer{
     grid-area: zf;
-    background-color: lightgreen; 
+    background-color: #1F3539; 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#div_modal{
-    width: 100%;
-    height: 100%;
-    /* Referido a la posicion izquierda */
-    /* Vamos a acomodar el div modal al section */
-    position: absolute;
-    top:100px;
-    left: 0;
-    z-index: 10;
-    background-color: rgb(190, 248, 190);
-    /* Oculta la ventana */
-    display: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-#form_login{
-    border: 1px solid black;
-    padding: 30px;
-    font-size: 20px;
-
-}
-
-#div_error{
-    color: red;
-    font-weight: bold;
-}
-
-.centrado{
-    text-align: center;
-}
