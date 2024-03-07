@@ -27,7 +27,7 @@
 # TABLA MENSAJE
 	create table mensaje (
 		men_id int unsigned not null auto_increment,
-        men_mensaje varchar(50) not null,
+        men_mensaje mediumtext not null,
         men_fecha timestamp not null,
         men_like int unsigned not null,
         men_usu_id int unsigned not null,
@@ -43,9 +43,37 @@
 	insert into usuarios values (null, _nombre, _alias, md5(_password), _email, _foto, 0)$$
 	DELIMITER ;
     
-    call crear_usuario ("Gonzalo", "gontu", "gontu", "gs.alvarez8@gmail.com", "gonzalo.png");
     
-	select * from usuarios
+# INSERTAR FORO
+	DELIMITER $$
+	create procedure `crear_tema`(IN _nombre varchar(50), IN _descripcion mediumtext)
+	insert into temas values (null, _nombre, _descripcion, current_timestamp())$$
+	DELIMITER ;
+
     
+# SACAR TODOS LOS FOROS 
+	DELIMITER $$
+	create procedure `mostrar_temas`()
+	select * from temas$$
+	DELIMITER ;
+    
+# NUEVO MENSAJE 
+	DELIMITER $$
+	create procedure `nuevo_mensaje`(IN _mensaje mediumtext, _creador int, _tema int )
+	insert into mensaje values (null, _mensaje, current_timestamp, 0, _creador , _tema)$$
+	DELIMITER ;
+
+# MOSTRAR LOS MENSAJES DE CADA TEMA
+    
+	DELIMITER $$
+	create procedure `mostar_mensaje_tema`(IN _tema int)
+	select men_mensaje, men_fecha, men_like, usu_nombre from mensaje, temas, usuarios where men_tema_id = tema_id AND men_usu_id = usu_id AND tema_id = _tema$$
+	DELIMITER ;
+    
+    
+   
+
+   
+
 
 
