@@ -9,7 +9,7 @@ body{
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 130px 300px 1fr 50px;
+    grid-template-rows: 130px 130px 1fr 50px;
     grid-template-areas: 
     "zh"
     "zn"
@@ -73,8 +73,10 @@ nav{
     grid-area: zn;
     background-color: #1F3539;
     border-top: 3px solid #324E53;
+    border-bottom-right-radius: 10px ;
+    border-bottom-left-radius: 10px ;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     color: white;
 }
 
@@ -100,33 +102,66 @@ nav{
     border-radius: 10px;
 }
 
+
+
 section {
     grid-area: zs;
     background-color: white; 
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
-#form_deportes > table{
-    width: 300px;
-    border: 1px solid black;
-}
-
-#form_deportes td{
-    width: 25%;
-}
-section > div {
-    border: 1px solid black;
-    height: 200px;
-    width: 100%;
-    padding-bottom: 20px;
+.mensaje {
+    border: 2px solid rgb(82, 77, 77);
+    height: auto;
+    width: 90%;
     margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
 }
+
+.div_datos_mensaje{
+    height: 42px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.div_foto_mensaje{
+    height: 100%;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto_mensaje{
+    height: 90%;
+    width: 90%;
+}
+
+.img_foto_mensaje{
+    height: 100%;
+}
+
+.nombre_usu_mensaje{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-weight: 700;
+    
+}
+
+.div_texto_mensaje{
+    height: auto;
+    padding-left: 60px;
+}
+
+
+
 footer{
     grid-area: zf;
     background-color: lightgreen; 
