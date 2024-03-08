@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family:"Fredoka", sans-serif ;
 
 }
 #body_index{
@@ -14,8 +14,22 @@
     "zh"
     "zn"
     "zs";
-    overflow: hidden;
 }
+
+#botonx{
+    position: absolute;
+    top: 2%;
+    left: 96%;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+}
+
+#botonx:hover{
+    color: rgb(77, 77, 77);
+}
+
+
 
 #modal_login{
     position: fixed;
@@ -23,10 +37,8 @@
     width: 100%;
     height: 100%;
     z-index: 10;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
-   
-   
 }
 
 #modal_login > div{
@@ -208,6 +220,11 @@ header{
     height: 50px;
     width: 160px;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+#boton_login_header:hover{
+    background-color: #086956;
 }
 
 #botones_extra_header{
