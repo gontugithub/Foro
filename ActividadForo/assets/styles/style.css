@@ -33,26 +33,108 @@
     width: 100%;
 }
 
+
+#div_modal_log_text{
+    display: flex;
+    align-items: end;
+    justify-content: right;
+
+}
+
+#div_modal_in_text{
+    display: flex;
+    align-items: baseline;
+    justify-content: left;
+    padding-left: 20px;
+}
+
+.text_modal{
+    font-size: 250px;
+    font-weight: 600;
+    color: #00000041;
+    font-family:"Fredoka", sans-serif ;
+}
+
+
 #div_modal_datauser{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#input_output_login{
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    height: 20%;
+}
+
+#mensaje_error{
+    width: 100%;
+    display: none;
+    justify-content: center;
+}
+
+#boton_log_in{
+    width: 40%;
+}
+
+#boton_log_in > input{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+}
+
+#contenedor_modal_login{
+    width: 60%;
+    height: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#contenedor_modal_login{
-    background-color: red;
-    width: 60%;
-    height: 95%;
-    display: flex;
-    flex-wrap: wrap;
-    
+#contenedor_inputs{
+    width: 100%;
 }
 
 .div_inputs_contenedor_modal_login{
-    background-color: greenyellow;
+    background-color: #1F3539 ;
     width: 100%;
-    height: 10%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+   
 }
+
+.div_inputs_contenedor_modal_login > input{
+    width: 100%;
+    height: 60px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: rgb(197, 195, 195);
+    border: 0px;
+    border-radius: 8px;
+
+}
+
+.div_inputs_contenedor_modal_login > div{
+    color: white;
+    font-weight: 500;
+    font-size: 22px;
+    padding: 20px;
+    padding-left: 0;
+    font-family:"Fredoka", sans-serif ;
+
+}
+
+
 
 #div_escribir_mensaje{
     width: 100%;

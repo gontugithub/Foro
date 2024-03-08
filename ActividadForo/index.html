@@ -6,25 +6,44 @@
     <title>FORO</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <script src="assets/scripts/scripts.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+
   
 </head>
 <body id="body_index">
     <div id="modal_login">
         <!-- OVERFLOW HIDDEN -->
-        <div id="div_modal_log_text">a</div>
+        <div id="div_modal_log_text">
+            <div class="text_modal">LOG</div>
+        </div>
         <div id="div_modal_datauser">
             <div id="contenedor_modal_login">
-                <div class="div_inputs_contenedor_modal_login">
-                    <div id="name_input">name</div>
-                    <input type="text">
-                </div>
-                <div class="div_inputs_contenedor_modal_login">
-                    <div id="password_input">password</div>
-                    <input type="password">
+                <div id="contenedor_inputs">
+                    <div class="div_inputs_contenedor_modal_login">
+                        <div>name</div>
+                        <input type="text">
+                    </div>
+                    <div class="div_inputs_contenedor_modal_login">
+                        <div>password</div>
+                        <input type="password">
+                    </div>
                 </div>
             </div>
+            <div id="input_output_login">
+                <div id="mensaje_error">CONSTRASEÑA INCORRECTA</div>
+                <div id="boton_log_in">
+                    <input type="button" value="LOG IN">
+                </div>
+            </div>
+           
         </div>
-        <div id="div_modal_in_text">a</div>
+        <div id="div_modal_in_text">
+            <div class="text_modal">
+                IN
+            </div>
+        </div>
     </div>
     <div id="div_escribir_mensaje">
         <textarea type="text" id="input_div_escribir">Escribe aquí</textarea>
