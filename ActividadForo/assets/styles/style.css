@@ -14,6 +14,44 @@
     "zh"
     "zn"
     "zs";
+    overflow: hidden;
+}
+
+#modal_login{
+    position: fixed;
+    background-color: #1F3539;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+   
+   
+}
+
+#modal_login > div{
+    width: 100%;
+}
+
+#div_modal_datauser{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contenedor_modal_login{
+    background-color: red;
+    width: 60%;
+    height: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.div_inputs_contenedor_modal_login{
+    background-color: greenyellow;
+    width: 100%;
+    height: 10%;
 }
 
 #div_escribir_mensaje{
