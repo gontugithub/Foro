@@ -16,17 +16,160 @@
     "zs";
 }
 
-#botonx{
+
+#botonxregistro{
     position: absolute;
-    top: 2%;
+    top: 1%;
     left: 96%;
     font-size: 22px;
     color: white;
     cursor: pointer;
+    z-index: 20;
+}
+
+#botonxregistro:hover{
+    color: #0CA789;
+}
+
+#modal_registro{
+    position: fixed;
+    position: fixed;
+    background-color: #1F3539;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#modal_registro > div{
+    width: 100%;
+}
+
+.text_modal_registro{
+    font-size: 150px;
+    font-weight: 600;
+    color: #00000041;
+    font-family:"Fredoka", sans-serif ;
+}
+
+#div_modal_datauser_registro{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    height: auto;
+
+}
+
+#div_modal_new_text{
+    display: flex;
+    align-items: end;
+    justify-content: right;
+}
+
+#div_modal_user_text{
+    display: flex;
+    align-items: baseline;
+    justify-content: left;
+    padding-left: 20px;
+
+}
+
+.div_inputs_contenedor_modal_registro{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.div_inputs_contenedor_modal_registro > input{
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: rgb(197, 195, 195);
+    border: 0px;
+    border-radius: 8px;
+
+}
+
+.div_inputs_contenedor_modal_registro > div{
+    color: white;
+    font-weight: 500;
+    font-family:"Fredoka", sans-serif ;
+
+}
+
+#input_output_registro{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 40%;
+
+}
+
+#mensaje_error_registro{
+    display: none;
+    text-align: center;
+    margin-bottom: 5px;
+    color: white;
+}
+
+#boton_registro{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#boton_registro > input{
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #0CA789;
+}
+
+
+
+
+
+
+#botonx{
+    position: absolute;
+    top: 1%;
+    left: 96%;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+    z-index: 20;
+}
+
+#regsitrarse{
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    top:2%;
+    left: 2%;
+    z-index: 10;
+    font-size: 12px ;
+}
+
+#texto_registrarse:hover{
+    color: #0CA789;
+   z-index: 10 ;
+   cursor: pointer;
 }
 
 #botonx:hover{
-    color: rgb(77, 77, 77);
+    color: #0CA789;
 }
 
 
@@ -37,7 +180,7 @@
     width: 100%;
     height: 100%;
     z-index: 10;
-    display: none;
+    display: flex;
     flex-wrap: wrap;
 }
 
@@ -61,7 +204,7 @@
 }
 
 .text_modal{
-    font-size: 250px;
+    font-size: 200px;
     font-weight: 600;
     color: #00000041;
     font-family:"Fredoka", sans-serif ;
@@ -99,6 +242,8 @@
     width: 100%;
     height: 40px;
     border-radius: 10px;
+    border: 0;
+    background-color: #0CA789;
 }
 
 #contenedor_modal_login{

@@ -13,8 +13,52 @@
   
 </head>
 <body id="body_index">
+    <div id="modal_registro">
+        <div id="botonxregistro" onclick="fCerrarModalRegistro()">X</div>
+        <div id="div_modal_new_text">
+            <div class="text_modal_registro">NEW</div>
+        </div>
+        <div id="div_modal_datauser_registro">
+            <div id="contenedor_modal_login">
+                <div id="contenedor_inputs">
+                    <div class="div_inputs_contenedor_modal_registro">
+                        <div>name</div>
+                        <input type="text">
+                    </div>
+                    <div class="div_inputs_contenedor_modal_registro">
+                        <div>password</div>
+                        <input type="password">
+                    </div>
+                    <div class="div_inputs_contenedor_modal_registro">
+                        <div>password</div>
+                        <input type="password">
+                    </div>
+                    <div class="div_inputs_contenedor_modal_registro">
+                        <div>password</div>
+                        <input type="password">
+                    </div>
+                </div>
+            </div>
+
+            <div id="input_output_registro">
+                <div id="mensaje_error_registro">LAS CONTRASEÑAS DEBEN SER IGUALES</div>
+                <div id="boton_registro">
+                    <input type="button" value="LOG IN">
+                </div>
+            </div>
+        </div>
+        <div id="div_modal_user_text">
+            <div class="text_modal_registro">
+                USER
+            </div>
+        </div>
+
+    </div>
     <div id="modal_login">
         <div id="botonx" onclick="fCerrarModalLogin()">X</div>
+        <div id="regsitrarse">
+            <div id="texto_registrarse" onclick="fAbrirModalRegistro()">NO TIENES CUENTA</div>
+        </div>
         <!-- OVERFLOW HIDDEN -->
         <div id="div_modal_log_text">
             <div class="text_modal">LOG</div>
