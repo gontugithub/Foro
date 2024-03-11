@@ -6,7 +6,7 @@ if (isset($_REQUEST['peticion'])) {
         case "login":
             $alias = $_REQUEST['alias'];
             $password = $_REQUEST['password'];
-            $sql = "CALL Usuarios_Login('$alias', '$password')";
+            $sql = "call login('$alias','$password')";
             $datos['sql'] = $sql;
             $datos['datos'] = BBDD_CTRLR::Consultas($sql);
             echo json_encode($datos);      

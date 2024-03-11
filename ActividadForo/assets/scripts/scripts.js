@@ -87,16 +87,29 @@ function fNuevoUsuario(){
 
 function fLogin(){
 
+    console.log("hola")
+
     let URL = "assets/php/servidor.php?peticion=login";
 
     URL += "&alias=" + document.querySelector("#input_alias_login").value;
-    URL += "$password=" + document.querySelector("#input_password_login").value;
+    URL += "&password=" + document.querySelector("#input_password_login").value;
 
     fetch(URL)
     .then((response) => response.json()) 
     .then((data) => {
 
         console.log(data);
+
+        if (data.datos.length == 0){
+            document.querySelector("#mensaje_error").style.display = "flex";
+        } else{
+            setTimeout(fCerrarModalLogin, 2000)
+        }
+
+
+
+
+
 
     
     })
