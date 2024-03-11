@@ -3,13 +3,9 @@ require_once("BBDD_CTRLR.php");
 
 if (isset($_REQUEST['peticion'])) {
     switch ($_REQUEST['peticion']) {
-        case "Login":
-            //Recuperar alias de la URL
+        case "login":
             $alias = $_REQUEST['alias'];
-            //Recuperar password de la URL
             $password = $_REQUEST['password'];
-            //SQL QUE LO COMPRUEBA
-            // Utilizando procedures
             $sql = "CALL Usuarios_Login('$alias', '$password')";
             $datos['sql'] = $sql;
             $datos['datos'] = BBDD_CTRLR::Consultas($sql);
