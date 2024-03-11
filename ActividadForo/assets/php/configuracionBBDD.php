@@ -3,4 +3,4 @@
 define ("SERVIDOR", "localhost");
 define ("USUARIO", "root");
 define ("PASSWORD", "");
-define ("BBDD", "deportes");
+define ("BBDD", "bd_foro");

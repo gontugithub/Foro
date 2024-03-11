@@ -15,29 +15,33 @@ if (isset($_REQUEST['peticion'])) {
             $datos['datos'] = BBDD_CTRLR::Consultas($sql);
             echo json_encode($datos);      
             break;
-        case "Registro":
-            $nombre = $_REQUEST['nombre'];
+
+        case "mostrar_temas":
+            $sql = "call mostrar_temas()";
+            $datos['sql'] = $sql;
+            $datos['datos'] = BBDD_CTRLR::Consultas($sql);
+            echo json_encode($datos);      
+            break;
+
+        case "mostrar_mensajes":
+            $temaid = $_REQUEST['temaid'];
+            $sql = "call mostar_mensaje_tema('$temaid')";
+            $datos['sql'] = $sql;
+            $datos['datos'] = BBDD_CTRLR::Consultas($sql);
+            echo json_encode($datos);      
+            break;
+
+        case "nuevo_user":
+            $name = $_REQUEST['name'];
             $alias = $_REQUEST['alias'];
-            //Recuperar password de la URL
+            $email = $_REQUEST['email'];
             $password = $_REQUEST['password'];
-            //SQL QUE LO COMPRUEBA
-            // Utilizando procedures
-            $sql = "CALL Usuarios_I('$nombre', '$alias', '$password')";
+            $foto = $_REQUEST['foto'];
+            $sql = "call crear_usuario('$name', '$alias', '$email', '$password' , '$foto')";
             $datos['sql'] = $sql;
-            $datos['datos'] = BBDD_CTRLR::CRUD($sql, "i");
+            $datos['datos'] = BBDD_CTRLR::CRUD($sql,'i');
             echo json_encode($datos);      
             break;
-        case "Deportes":     
-            $sql = "SELECT * FROM deportes";
-            $datos['sql'] = $sql;
-            $datos['datos'] = BBDD_CTRLR::Consultas($sql);
-            echo json_encode($datos);      
-            break;
-        case "Deportistas":     
-            $sql = "SELECT dta_nombre FROM deportistas";
-            $datos['sql'] = $sql;
-            $datos['datos'] = BBDD_CTRLR::Consultas($sql);
-            echo json_encode($datos);      
-            break;
+
     }        
 }

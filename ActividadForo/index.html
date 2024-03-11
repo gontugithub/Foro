@@ -12,7 +12,7 @@
 
   
 </head>
-<body id="body_index">
+<body id="body_index" onload="fMostrarTemas()">
     <div id="modal_registro">
         <div id="botonxregistro" onclick="fCerrarModalRegistro()">X</div>
         <div id="div_modal_new_text">
@@ -23,29 +23,33 @@
                 <div id="contenedor_inputs">
                     <div class="div_inputs_contenedor_modal_registro">
                         <div>name</div>
-                        <input type="text">
+                        <input type="text" id="name_registro" value="">
+                    </div>
+                    <div class="div_inputs_contenedor_modal_registro">
+                        <div>alias</div>
+                        <input type="text" id="alias_registro" value="">
+                    </div>
+                    <div class="div_inputs_contenedor_modal_registro">
+                        <div>email</div>
+                        <input type="text" id="email_registro">
                     </div>
                     <div class="div_inputs_contenedor_modal_registro">
                         <div>password</div>
-                        <input type="password">
+                        <input type="password" id="password_registro">
                     </div>
                     <div class="div_inputs_contenedor_modal_registro">
-                        <div>password</div>
-                        <input type="password">
-                    </div>
-                    <div class="div_inputs_contenedor_modal_registro">
-                        <div>password</div>
-                        <input type="password">
+                        <div>repeat password</div>
+                        <input type="password" id="repeat_password_registro">
                     </div>
                 </div>
             </div>
 
             <div id="input_output_registro">
                 <div id="mensaje_error_registro">LAS CONTRASEÑAS DEBEN SER IGUALES</div>
-                <div id="boton_registro">
-                    <input type="button" value="LOG IN">
+                <div id="boton_registro" onclick="fNuevoUsuario()">
+                    <input type="button" value="REGISTER">
                 </div>
-            </div>
+            </div>  
         </div>
         <div id="div_modal_user_text">
             <div class="text_modal_registro">
@@ -91,7 +95,7 @@
         </div>
     </div>
     <div id="div_escribir_mensaje">
-        <textarea type="text" id="input_div_escribir">Escribe aquí</textarea>
+        <textarea type="text" id="input_div_escribir" placeholder="Escribe aqui tu mensaje"></textarea>
         <input type="button" value="ENVIAR" id="boton_enviar_div_escribir">
     </div>
     <header>
