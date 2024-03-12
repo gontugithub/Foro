@@ -65,7 +65,7 @@ function fMostrarMensajesTema(tema_id) {
                    <div class="nombre_usu_mensaje">${data.datos[i].usu_alias}</div></div>
                    <div class="funcionalidad_mensaje">
                    <div class="hora">${data.datos[i].men_fecha}</div>
-                   <div class="eliminar_mensaje">X</div></div></div>
+                   <div class="eliminar_mensaje" onclick="fEliminarMensaje(${data.datos[i].men_id})">X</div></div></div>
                    <div class="div_texto_mensaje">${data.datos[i].men_mensaje}</div></div>`;
                 } else{
                     html += `<div class="mensaje">
@@ -178,6 +178,29 @@ function fEnviarMensaje(){
         document.querySelector("#input_div_escribir").value = ""
 
     })
+
+
+}
+
+function fEliminarMensaje(men_id){
+
+    let URL = "assets/php/servidor.php?peticion=borrar_mensaje";
+
+    URL += "&mensaje=" + document.querySelector("#input_div_escribir").value;
+    URL += "&id=" + registrado;
+    URL += "&tema=" + tema;
+
+    fetch(URL)
+    .then((response) => response.json()) 
+    .then((data) => {
+
+        console.log(data);
+
+        fMostrarMensajesTema(tema)
+        document.querySelector("#input_div_escribir").value = ""
+
+    })
+
 
 
 }

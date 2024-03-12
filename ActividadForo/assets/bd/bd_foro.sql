@@ -35,13 +35,17 @@
         foreign key (men_usu_id) references usuarios(usu_id),
 		foreign key (men_tema_id) references temas(tema_id)
     );
+
+# USER ADMIN 
+
+insert into usuarios values (null, "gonzalo", "gontu", md5("gontu"), "gontu@gmail.com", "u09.gif", 1);
     
 # CREAR USUARIO
 	DELIMITER $$
 	create procedure `crear_usuario`(IN _nombre varchar(50), IN _alias varchar(50), IN _password varchar(50), IN _email varchar(50), _foto varchar(50))
 	insert into usuarios values (null, _nombre, _alias, md5(_password), _email, _foto, 0)$$
-	DELIMITER 
-    
+	DELIMITER ;
+
     
 # INSERTAR FORO
 	DELIMITER $$
@@ -66,7 +70,7 @@
     
 	DELIMITER $$
 	create procedure `mostar_mensaje_tema`(IN _tema int)
-	select men_mensaje, men_fecha, men_like, usu_nombre, usu_alias, usu_id from mensaje, temas, usuarios where men_tema_id = tema_id AND men_usu_id = usu_id AND tema_id = _tema$$
+	select men_mensaje, men_id, men_fecha, men_like, usu_nombre, usu_alias, usu_id from mensaje, temas, usuarios where men_tema_id = tema_id AND men_usu_id = usu_id AND tema_id = _tema$$
 	DELIMITER ;
     
 # LOGIN
@@ -75,6 +79,15 @@
 	create procedure `login`(IN _alias varchar(50), IN _password varchar(50))
 	select * from usuarios where usu_alias = _alias and usu_password = md5(_password)$$
 	DELIMITER ;
+
+# ELIMINAR MENSAJE
+
+	DELIMITER $$
+	create procedure `eliminar_mensaje`(IN _menid int)
+	delete from mensaje where men_id = _menid$$
+	DELIMITER ;
+
+
 	
     
     
