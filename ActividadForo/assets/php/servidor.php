@@ -33,7 +33,7 @@ if (isset($_REQUEST['peticion'])) {
             $email = $_REQUEST['email'];
             $password = $_REQUEST['password'];
             $foto = $_REQUEST['foto'];
-            $sql = "call crear_usuario('$name', '$alias', '$email', '$password' , '$foto')";
+            $sql = "call crear_usuario('$name', '$alias', '$password', '$email', '$foto')";
             $datos['sql'] = $sql;
             $datos['datos'] = BBDD_CTRLR::CRUD($sql,'i');
             echo json_encode($datos);      

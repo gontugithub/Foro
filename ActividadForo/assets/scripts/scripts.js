@@ -176,7 +176,7 @@ function fEnviarMensaje(){
         console.log(data);
 
         fMostrarMensajesTema(tema)
-
+        document.querySelector("#input_div_escribir").value = ""
 
     })
 
