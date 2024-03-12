@@ -66,7 +66,7 @@
     
 	DELIMITER $$
 	create procedure `mostar_mensaje_tema`(IN _tema int)
-	select men_mensaje, men_fecha, men_like, usu_nombre from mensaje, temas, usuarios where men_tema_id = tema_id AND men_usu_id = usu_id AND tema_id = _tema$$
+	select men_mensaje, men_fecha, men_like, usu_nombre, usu_alias, usu_id from mensaje, temas, usuarios where men_tema_id = tema_id AND men_usu_id = usu_id AND tema_id = _tema$$
 	DELIMITER ;
     
 # LOGIN
