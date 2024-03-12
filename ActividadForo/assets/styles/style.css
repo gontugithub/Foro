@@ -450,12 +450,22 @@ section {
     height: 42px;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.div_datos_mensaje > div{
+    width: 50%;
+    
+}
+
+.datos_mensaje{
+    display: flex;
+
 }
 
 .div_foto_mensaje{
     height: 100%;
-    width: 55px;
+    margin-right: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -476,8 +486,22 @@ section {
     align-items: center;
     justify-content: left;
     font-weight: 700;
+}
+
+.eliminar_mensaje{
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 700;
     
 }
+
+.funcionalidad_mensaje{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
 
 .div_texto_mensaje{
     height: auto;

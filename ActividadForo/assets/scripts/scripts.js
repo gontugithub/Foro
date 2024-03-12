@@ -56,29 +56,28 @@ function fMostrarMensajesTema(tema_id) {
             for(i = 0; i< data.datos.length; i++){
 
                 if(registrado == data.datos[i].usu_id){
-                    html += `<div class="mensaje">`;
-                    html += `<div class="div_datos_mensaje">`;
-                    html += `<div class="div_foto_mensaje">`;
-                    html += `<div class="foto_mensaje">`;
-                    html += `<img src="assets/img/u01.gif" class="img_foto_mensaje">x`
-                    html += `</div>`
-                    html += `</div>`
-                    html += `<div class="nombre_usu_mensaje">${data.datos[i].usu_alias}</div>`
-                    html += `</div>`
-                    html += `<div class="div_texto_mensaje">${data.datos[i].men_mensaje}</div>`
-                    html += `</div>`
+                   html += `<div class="mensaje">
+                   <div class="div_datos_mensaje">
+                   <div class="datos_mensaje">
+                   <div class="div_foto_mensaje">
+                   <div class="foto_mensaje">
+                   <img src="assets/img/u01.gif" class="img_foto_mensaje"></div></div>
+                   <div class="nombre_usu_mensaje">${data.datos[i].usu_alias}</div></div>
+                   <div class="funcionalidad_mensaje">
+                   <div class="hora">${data.datos[i].men_fecha}</div>
+                   <div class="eliminar_mensaje">X</div></div></div>
+                   <div class="div_texto_mensaje">${data.datos[i].men_mensaje}</div></div>`;
                 } else{
-                    html += `<div class="mensaje">`;
-                    html += `<div class="div_datos_mensaje">`;
-                    html += `<div class="div_foto_mensaje">`;
-                    html += `<div class="foto_mensaje">`;
-                    html += `<img src="assets/img/u01.gif" class="img_foto_mensaje">`
-                    html += `</div>`
-                    html += `</div>`
-                    html += `<div class="nombre_usu_mensaje">${data.datos[i].usu_alias}</div>`
-                    html += `</div>`
-                    html += `<div class="div_texto_mensaje">${data.datos[i].men_mensaje}</div>`
-                    html += `</div>`
+                    html += `<div class="mensaje">
+                    <div class="div_datos_mensaje">
+                    <div class="datos_mensaje">
+                    <div class="div_foto_mensaje">
+                    <div class="foto_mensaje">
+                    <img src="assets/img/u01.gif" class="img_foto_mensaje"></div></div>
+                    <div class="nombre_usu_mensaje">${data.datos[i].usu_alias}</div></div>
+                    <div class="funcionalidad_mensaje">
+                    <div class="hora">${data.datos[i].men_fecha}</div>   </div></div>
+                    <div class="div_texto_mensaje">${data.datos[i].men_mensaje}</div></div>`;
                 }
                 console.log(html)
 
