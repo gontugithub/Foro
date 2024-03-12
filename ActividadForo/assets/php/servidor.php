@@ -39,7 +39,7 @@ if (isset($_REQUEST['peticion'])) {
             echo json_encode($datos);      
             break;
         
-        case "enviar_mensaje"; 
+        case "enviar_mensaje":
             $mensaje = $_REQUEST['mensaje'];
             $id = $_REQUEST['id'];
             $tema = $_REQUEST['tema'];
@@ -48,6 +48,15 @@ if (isset($_REQUEST['peticion'])) {
             $datos['datos'] = BBDD_CTRLR::CRUD($sql,'i');
             echo json_encode($datos);      
             break;
+        
+        case "eliminar_mensaje":
+            $menid = $_REQUEST['menid'];
+            $sql = "call eliminar_mensaje('$menid')";
+            $datos['sql'] = $sql;
+            $datos['datos'] = BBDD_CTRLR::CRUD($sql,'i');
+            echo json_encode($datos);      
+            break;
+
 
     }        
 }

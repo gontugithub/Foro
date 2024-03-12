@@ -137,13 +137,16 @@ function fLogin(){
 
         console.log(data);
 
-        registrado = data.datos[0].usu_id;
-
-        console.log(registrado)
+        
 
         if (data.datos.length == 0){
             document.querySelector("#mensaje_error").style.display = "flex";
+            document.querySelector("#mensaje_error").innerHTML = "CONTRASEÑA INCORRECTA O NO REGISTRADO";
         } else{
+
+            registrado = data.datos[0].usu_id;
+
+            console.log(registrado)
 
             let mensajelog = "BIENVENIDO " + data.datos[0].usu_nombre;
 
@@ -182,22 +185,16 @@ function fEnviarMensaje(){
 
 }
 
-function fEliminarMensaje(men_id){
+function fEliminarMensaje(menid){
 
-    let URL = "assets/php/servidor.php?peticion=borrar_mensaje";
-
-    URL += "&mensaje=" + document.querySelector("#input_div_escribir").value;
-    URL += "&id=" + registrado;
-    URL += "&tema=" + tema;
+    let URL = "assets/php/servidor.php?peticion=eliminar_mensaje&menid=" + menid;
 
     fetch(URL)
     .then((response) => response.json()) 
     .then((data) => {
 
         console.log(data);
-
-        fMostrarMensajesTema(tema)
-        document.querySelector("#input_div_escribir").value = ""
+        fMostrarMensajesTema(tema);
 
     })
 
