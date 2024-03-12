@@ -38,6 +38,16 @@ if (isset($_REQUEST['peticion'])) {
             $datos['datos'] = BBDD_CTRLR::CRUD($sql,'i');
             echo json_encode($datos);      
             break;
+        
+        case "enviar_mensaje"; 
+            $mensaje = $_REQUEST['mensaje'];
+            $id = $_REQUEST['id'];
+            $tema = $_REQUEST['tema'];
+            $sql = "call nuevo_mensaje('$mensaje','$id','$tema')";
+            $datos['sql'] = $sql;
+            $datos['datos'] = BBDD_CTRLR::CRUD($sql,'i');
+            echo json_encode($datos);      
+            break;
 
     }        
 }

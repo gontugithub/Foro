@@ -1,3 +1,5 @@
+let registrado;
+let tema;
 
 function fCerrarModalLogin(){
     document.querySelector("#modal_login").style.display = "none";
@@ -40,6 +42,8 @@ function fMostrarTemas(){
 
 function fMostrarMensajesTema(tema_id) {
 
+    tema = tema_id;
+
     const URL = "assets/php/servidor.php?peticion=mostrar_mensajes&temaid= " + tema_id;
         fetch(URL)
         .then((response) => response.json()) 
@@ -50,27 +54,37 @@ function fMostrarMensajesTema(tema_id) {
             let html = "";
 
             for(i = 0; i< data.datos.length; i++){
-                html += `<div class="mensaje">`;
-                html += `<div class="div_datos_mensaje">`;
-                html += `<div class="div_foto_mensaje">`;
-                html += `<div class="foto_mensaje">`;
-                html += `<img src="assets/img/u01.gif" class="img_foto_mensaje">`
-                html += `</div>`
-                html += `</div>`
-                html += `<div class="nombre_usu_mensaje">${data.datos[0].usu_alias}</div>`
-                html += `</div>`
-                html += `<div class="div_texto_mensaje">${data.datos[0].men_mensaje}</div>`
-                html += `</div>`
 
+                if(registrado == data.datos[i].usu_id){
+                    html += `<div class="mensaje">`;
+                    html += `<div class="div_datos_mensaje">`;
+                    html += `<div class="div_foto_mensaje">`;
+                    html += `<div class="foto_mensaje">`;
+                    html += `<img src="assets/img/u01.gif" class="img_foto_mensaje">x`
+                    html += `</div>`
+                    html += `</div>`
+                    html += `<div class="nombre_usu_mensaje">${data.datos[i].usu_alias}</div>`
+                    html += `</div>`
+                    html += `<div class="div_texto_mensaje">${data.datos[i].men_mensaje}</div>`
+                    html += `</div>`
+                } else{
+                    html += `<div class="mensaje">`;
+                    html += `<div class="div_datos_mensaje">`;
+                    html += `<div class="div_foto_mensaje">`;
+                    html += `<div class="foto_mensaje">`;
+                    html += `<img src="assets/img/u01.gif" class="img_foto_mensaje">`
+                    html += `</div>`
+                    html += `</div>`
+                    html += `<div class="nombre_usu_mensaje">${data.datos[i].usu_alias}</div>`
+                    html += `</div>`
+                    html += `<div class="div_texto_mensaje">${data.datos[i].men_mensaje}</div>`
+                    html += `</div>`
+                }
                 console.log(html)
 
                 document.querySelector("section").innerHTML = html;
 
-
-
-
             }
-
 
         })
 }
@@ -113,8 +127,6 @@ function fNuevoUsuario(){
 
 function fLogin(){
 
-    console.log("hola")
-
     let URL = "assets/php/servidor.php?peticion=login";
 
     URL += "&alias=" + document.querySelector("#input_alias_login").value;
@@ -125,6 +137,10 @@ function fLogin(){
     .then((data) => {
 
         console.log(data);
+
+        registrado = data.datos[0].usu_id;
+
+        console.log(registrado)
 
         if (data.datos.length == 0){
             document.querySelector("#mensaje_error").style.display = "flex";
@@ -138,15 +154,32 @@ function fLogin(){
             document.querySelector("#alias_login_header").style.display = "flex";
             document.querySelector("#alias_login_header").innerHTML = data.datos[0].usu_alias;
             document.querySelector("#boton_login_header").style.display = "none";
+            document.querySelector("#div_escribir_mensaje").style.display = "flex";
         }
 
-
-
-
-
-
-    
     })
+
+}
+
+function fEnviarMensaje(){
+
+    let URL = "assets/php/servidor.php?peticion=enviar_mensaje";
+
+    URL += "&mensaje=" + document.querySelector("#input_div_escribir").value;
+    URL += "&id=" + registrado;
+    URL += "&tema=" + tema;
+
+    fetch(URL)
+    .then((response) => response.json()) 
+    .then((data) => {
+
+        console.log(data);
+
+        fMostrarMensajesTema(tema)
+
+
+    })
+
 
 }
 
