@@ -46,6 +46,32 @@ function fMostrarMensajesTema(tema_id) {
         .then((data) => {
 
             console.log(data);
+
+            let html = "";
+
+            for(i = 0; i< data.datos.length; i++){
+                html += `<div class="mensaje">`;
+                html += `<div class="div_datos_mensaje">`;
+                html += `<div class="div_foto_mensaje">`;
+                html += `<div class="foto_mensaje">`;
+                html += `<img src="assets/img/u01.gif" class="img_foto_mensaje">`
+                html += `</div>`
+                html += `</div>`
+                html += `<div class="nombre_usu_mensaje">${data.datos[0].usu_alias}</div>`
+                html += `</div>`
+                html += `<div class="div_texto_mensaje">${data.datos[0].men_mensaje}</div>`
+                html += `</div>`
+
+                console.log(html)
+
+                document.querySelector("section").innerHTML = html;
+
+
+
+
+            }
+
+
         })
 }
 
@@ -103,7 +129,15 @@ function fLogin(){
         if (data.datos.length == 0){
             document.querySelector("#mensaje_error").style.display = "flex";
         } else{
+
+            let mensajelog = "BIENVENIDO " + data.datos[0].usu_nombre;
+
+            document.querySelector("#mensaje_error").style.display = "flex";
+            document.querySelector("#mensaje_error").innerHTML = mensajelog.toUpperCase();
             setTimeout(fCerrarModalLogin, 2000)
+            document.querySelector("#alias_login_header").style.display = "flex";
+            document.querySelector("#alias_login_header").innerHTML = data.datos[0].usu_alias;
+            document.querySelector("#boton_login_header").style.display = "none";
         }
 
 
