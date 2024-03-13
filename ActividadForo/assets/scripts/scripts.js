@@ -48,12 +48,12 @@ function fMostrarMensajesTema(tema_id) {
         fetch(URL)
         .then((response) => response.json()) 
         .then((data) => {
-
-            console.log(data);
+            // document.querySelector("section").innerHTML = "";
+            console.log( "MENSAJES", data);
 
             let html = "";
 
-            for(i = 0; i< data.datos.length; i++){
+            for(i=0; i<data.datos.length; i++){
 
                 if(registrado == data.datos[i].usu_id){
                    html += `<div class="mensaje">
@@ -81,9 +81,9 @@ function fMostrarMensajesTema(tema_id) {
                 }
                 console.log(html)
 
-                document.querySelector("section").innerHTML = html;
-
             }
+            document.querySelector("section").innerHTML = html;
+
 
         })
 }
@@ -194,9 +194,11 @@ function fEliminarMensaje(menid){
     .then((data) => {
 
         console.log(data);
-        fMostrarMensajesTema(tema);
 
     })
+    .finally ( ()=>{
+        fMostrarMensajesTema(tema);
+    } );
 
 
 
