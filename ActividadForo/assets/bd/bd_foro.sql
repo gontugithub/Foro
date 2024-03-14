@@ -38,7 +38,7 @@
 
 # USER ADMIN 
 
-insert into usuarios values (null, "gonzalo", "gontu", md5("gontu"), "gontu@gmail.com", "u09.gif", 1);
+insert into usuarios values (null, "gonzalo", "gontu", md5("gontu"), "gontu@gmail.com", "bnrinoceronte.png", 1);
     
 # CREAR USUARIO
 	DELIMITER $$
@@ -70,7 +70,7 @@ insert into usuarios values (null, "gonzalo", "gontu", md5("gontu"), "gontu@gmai
     
 	DELIMITER $$
 	create procedure `mostar_mensaje_tema`(IN _tema int)
-	select men_mensaje, men_id, men_fecha, men_like, usu_nombre, usu_alias, usu_id from mensaje, temas, usuarios where men_tema_id = tema_id AND men_usu_id = usu_id AND tema_id = _tema$$
+	select men_mensaje, men_id, men_fecha, men_like, usu_nombre, usu_alias, usu_id, usu_foto from mensaje, temas, usuarios where men_tema_id = tema_id AND men_usu_id = usu_id AND tema_id = _tema$$
 	DELIMITER ;
     
 # LOGIN

@@ -1,6 +1,7 @@
 let registrado;
 let tema;
 let log = false;
+let img;
 
 function fCerrarModalLogin(){
     document.querySelector("#modal_login").style.display = "none";
@@ -62,7 +63,7 @@ function fMostrarMensajesTema(tema_id) {
                    <div class="datos_mensaje">
                    <div class="div_foto_mensaje">
                    <div class="foto_mensaje">
-                   <img src="assets/img/bnrinoceronte.png" class="img_foto_mensaje"></div></div>
+                   <img src="assets/img/${data.datos[i].usu_foto}" class="img_foto_mensaje"></div></div>
                    <div class="nombre_usu_mensaje">${data.datos[i].usu_alias}</div></div>
                    <div class="funcionalidad_mensaje">
                    <div class="hora">${data.datos[i].men_fecha}</div>
@@ -74,7 +75,7 @@ function fMostrarMensajesTema(tema_id) {
                     <div class="datos_mensaje">
                     <div class="div_foto_mensaje">
                     <div class="foto_mensaje">
-                    <img src="assets/img/bnrinoceronte.png" class="img_foto_mensaje"></div></div>
+                    <img src="assets/img/${data.datos[i].usu_foto}" class="img_foto_mensaje"></div></div>
                     <div class="nombre_usu_mensaje">${data.datos[i].usu_alias}</div></div>
                     <div class="funcionalidad_mensaje">
                     <div class="hora">${data.datos[i].men_fecha}</div>   </div></div>
@@ -111,7 +112,7 @@ function fNuevoUsuario(){
     URL += "&alias=" + document.querySelector("#alias_registro").value;
     URL += "&email=" + document.querySelector("#email_registro").value;
     URL += "&password=" + document.querySelector("#password_registro").value;
-    URL += "&foto";
+    URL += "&foto=" + img;
 
     fetch(URL)
     .then((response) => response.json()) 
@@ -123,7 +124,6 @@ function fNuevoUsuario(){
             document.querySelector("#mensaje_error_registro").style.display = "flex"
             document.querySelector("#mensaje_error_registro").innerHTML = "REGISTRO REALIZADO CON EXITO"
             setTimeout(fCerrarModalRegistro, 2000)
-
         }
     })
 
@@ -208,6 +208,12 @@ function fEliminarMensaje(menid){
 
 
 
+}
+
+
+function fSeleccionarImagen(imagen){
+    console.log(imagen)
+    img = imagen;
 }
 
 
