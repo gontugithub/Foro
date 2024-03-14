@@ -236,6 +236,7 @@
 
 #boton_log_in{
     width: 40%;
+    z-index: 30;
 }
 
 #boton_log_in > input{
