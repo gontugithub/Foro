@@ -1,5 +1,6 @@
 let registrado;
 let tema;
+let log = false;
 
 function fCerrarModalLogin(){
     document.querySelector("#modal_login").style.display = "none";
@@ -61,7 +62,7 @@ function fMostrarMensajesTema(tema_id) {
                    <div class="datos_mensaje">
                    <div class="div_foto_mensaje">
                    <div class="foto_mensaje">
-                   <img src="assets/img/u01.gif" class="img_foto_mensaje"></div></div>
+                   <img src="assets/img/bnrinoceronte.png" class="img_foto_mensaje"></div></div>
                    <div class="nombre_usu_mensaje">${data.datos[i].usu_alias}</div></div>
                    <div class="funcionalidad_mensaje">
                    <div class="hora">${data.datos[i].men_fecha}</div>
@@ -73,7 +74,7 @@ function fMostrarMensajesTema(tema_id) {
                     <div class="datos_mensaje">
                     <div class="div_foto_mensaje">
                     <div class="foto_mensaje">
-                    <img src="assets/img/u01.gif" class="img_foto_mensaje"></div></div>
+                    <img src="assets/img/bnrinoceronte.png" class="img_foto_mensaje"></div></div>
                     <div class="nombre_usu_mensaje">${data.datos[i].usu_alias}</div></div>
                     <div class="funcionalidad_mensaje">
                     <div class="hora">${data.datos[i].men_fecha}</div>   </div></div>
@@ -84,6 +85,11 @@ function fMostrarMensajesTema(tema_id) {
             }
             document.querySelector("section").innerHTML = html;
 
+            if(log == true){
+                document.querySelector("#div_escribir_mensaje").style.display = "flex";
+            }
+
+           
 
         })
 }
@@ -156,7 +162,7 @@ function fLogin(){
             document.querySelector("#alias_login_header").style.display = "flex";
             document.querySelector("#alias_login_header").innerHTML = data.datos[0].usu_alias;
             document.querySelector("#boton_login_header").style.display = "none";
-            document.querySelector("#div_escribir_mensaje").style.display = "flex";
+            log = true;
         }
 
     })
