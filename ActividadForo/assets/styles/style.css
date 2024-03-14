@@ -38,7 +38,7 @@
     width: 100%;
     height: 100%;
     z-index: 30;
-    display: none;
+    display: flex;
     flex-wrap: wrap;
 }
 
@@ -509,18 +509,41 @@ section {
 }
 
 
-/* ESTILOS LOGIN_HTML*/
+/* ESTILOS div_img_elegir*/
 
-#body_login{
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 120px 120px 1fr;
-    grid-template-areas: 
-    "zh"
-    "zn"
-    "zs";
+#div_img_elegir{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: 8px;
 
 }
+
+.div_imagen_registro{
+    width: 50px; 
+    padding: 5px;
+}
+
+.div_imagen_registro > img{
+   width: 100%;
+}
+
+
+@media screen and (min-width: 750px){
+    .div_imagen_registro{
+        width: 80px; 
+        padding: 5px;
+    }
+}
+
+@media screen and (min-width: 1150px){
+    .div_imagen_registro{   
+        width: 90px; 
+        padding: 5px;
+    }
+}
+    
+
 
 
