@@ -13,6 +13,21 @@
   
 </head>
 <body id="body_index" onload="fMostrarTemas()">
+    <div id="modal_admin">
+        <div id="botonxadmin" onclick="fCerrarModalAdmin()">X</div>
+        <div id="div_center_admin">
+        <div class="div_admin" id="div_insertar_tema" onclick="fAbrirModalInsertarTema()">INSERTAR TEMA</div>
+        <div class="div_admin" id="div_eliminar_tema">ELIMINAR TEMA</div>
+        </div>
+    </div>
+    <div id="insertar_tema">
+        <div id="botonxinsertartema" onclick="fCerrarModalInsertarTema()">X</div>
+        <div id="div_center_admin_datos">
+            <input class="inputs_insertar" id="input_nombre_tema" type="text" placeholder="NOMBRE TEMA">
+            <input class="inputs_insertar" id="input_descripcion" type="text" placeholder="DESCRIPCION">
+            <div id="botonenviartema" onclick="fInsertarTema()">ENVIAR</div>
+        </div>
+    </div>
     <div id="modal_registro">
         <div id="botonxregistro" onclick="fCerrarModalRegistro()">X</div>
         <div id="div_modal_new_text">
@@ -113,14 +128,14 @@
         <input type="button" value="ENVIAR" id="boton_enviar_div_escribir" onclick="fEnviarMensaje()">
     </div>
     <header>
-        <div class="div_header" id="div_menu_desplegable_header">
-            =
+        <div class="div_header" id="div_menu_desplegable_header" onclick="fAbrirModalAdmin()">
+            <div id="icono_admin">=</div>
         </div>
         <div class="div_header" id="div_botones_extra_header" >
             <div id="boton_login_header" onclick="fAbrirModalLogin()">
                 LOG IN
             </div>
-            <div id="alias_login_header" onclick="fMostrarConfiguracionUser()">
+            <div id="alias_login_header" >
                 
             </div>
         </div>

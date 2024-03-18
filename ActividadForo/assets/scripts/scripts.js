@@ -163,6 +163,10 @@ function fLogin(){
             document.querySelector("#alias_login_header").innerHTML = data.datos[0].usu_alias;
             document.querySelector("#boton_login_header").style.display = "none";
             log = true;
+
+            if(data.datos[0].usu_admin == 1){
+                document.querySelector("#icono_admin").style.display = "flex";
+            }
         }
 
     })
@@ -214,6 +218,44 @@ function fEliminarMensaje(menid){
 function fSeleccionarImagen(imagen){
     console.log(imagen)
     img = imagen;
+}
+
+function fCerrarModalAdmin() {
+    document.querySelector("#modal_admin").style.display = "none";
+}
+
+
+function fAbrirModalInsertarTema(){
+    document.querySelector("#insertar_tema").style.display = "flex";
+    fCerrarModalAdmin()
+}
+
+
+function fCerrarModalInsertarTema(){
+    document.querySelector("#insertar_tema").style.display = "none";
+}
+
+function fAbrirModalAdmin(){
+    document.querySelector("#modal_admin").style.display = "flex";
+}
+
+function fInsertarTema(){
+    let URL = "assets/php/servidor.php?peticion=insertar_tema";
+
+    URL += "&nombretema=" + document.querySelector("#input_nombre_tema").value;
+    URL += "&descripcion=" + document.querySelector("#input_descripcion").value;;
+
+    fetch(URL)
+    .then((response) => response.json()) 
+    .then((data) => {
+
+        console.log(data);
+
+    })
+    .finally ( ()=>{
+        fMostrarTemas();
+    } );
+
 }
 
 

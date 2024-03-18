@@ -57,6 +57,15 @@ if (isset($_REQUEST['peticion'])) {
             echo json_encode($datos);      
             break;
 
+        case "insertar_tema":
+            $nombretema = $_REQUEST['nombretema'];
+            $descripcion = $_REQUEST['descripcion'];
+            $sql = "call crear_tema('$nombretema', '$descripcion')";
+            $datos['sql'] = $sql;
+            $datos['datos'] = BBDD_CTRLR::CRUD($sql,'i');
+            echo json_encode($datos);      
+            break;
+
 
     }        
 }

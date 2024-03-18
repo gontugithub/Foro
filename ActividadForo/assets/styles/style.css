@@ -16,6 +16,90 @@
     "zs";
 }
 
+#modal_admin{
+    position: fixed;
+    background-color: #1F3539;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#botonenviartema{
+    color: white;
+    font-size: 20px;
+}
+
+#botonxadmin{
+    position: absolute;
+    top: 2%;
+    left: 95%;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+    z-index: 20;
+}
+
+#botonxinsertartema{
+    position: absolute;
+    top: 2%;
+    left: 95%;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+    z-index: 20;
+}
+
+#div_center_admin{
+    height: auto;
+    width: 60%;
+    text-align: center;
+}
+
+#div_center_admin_datos{
+    height: 184px;
+    width: 60%;
+    text-align: center;
+}
+
+.inputs_insertar{
+    height: 70px;
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+#insertar_tema{
+    position: fixed;
+    background-color: #1f3539da;
+    width: 100%;
+    height: 100%;
+    z-index: 40;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.div_admin{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 3px solid #0e181a;
+    color: #0e181a;
+    height: 290px;
+    width: 290px;
+    margin: 4% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
 
 #botonxregistro{
     position: absolute;
@@ -33,12 +117,11 @@
 
 #modal_registro{
     position: fixed;
-    position: fixed;
     background-color: #1F3539;
     width: 100%;
     height: 100%;
     z-index: 30;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
 }
 
@@ -345,7 +428,15 @@ header{
 
 #div_menu_desplegable_header{
     padding-left: 5%;
-    font-size: 50px;
+    font-size: 52px;
+}
+
+#icono_admin{
+    width: 30px;
+    height: 40px;
+    display: none;
+    align-items: center;
+    justify-content: center;
 }
 
 #div_botones_extra_header{
