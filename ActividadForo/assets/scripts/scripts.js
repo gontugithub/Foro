@@ -2,6 +2,7 @@ let registrado;
 let tema;
 let log = false;
 let img;
+let admin = false;
 
 function fCerrarModalLogin(){
     document.querySelector("#modal_login").style.display = "none";
@@ -31,12 +32,14 @@ function fMostrarTemas(){
 
             console.log(data);
 
+            console.log(admin)
+
             let html = "";
 
             for(i = 0; i< data.datos.length; i++){
                 
-                html += `<div class="div_foros" onclick="fMostrarMensajesTema(${data.datos[i].tema_id})">
-                <div class="nombre_tema">${data.datos[i].tema_nombre}</div>
+                html += `<div class="div_foros">
+                <div class="nombre_tema" onclick="fMostrarMensajesTema(${data.datos[i].tema_id})">${data.datos[i].tema_nombre}</div>
                 <div class="x_eliminarforo" onclick="fEliminarTema(${data.datos[i].tema_id})">X</div>
                 </div>`
                 
@@ -44,6 +47,8 @@ function fMostrarTemas(){
 
             console.log(html);
             document.querySelector("#div_foros_nav").innerHTML = html;
+
+            
         })
 }
 
@@ -171,6 +176,9 @@ function fLogin(){
 
             if(data.datos[0].usu_admin == 1){
                 document.querySelector("#icono_admin").style.display = "flex";
+                fEliminarTemaAbrirModo();
+                
+
             }
         }
 
@@ -227,7 +235,6 @@ function fSeleccionarImagen(imagen){
 
 function fCerrarModalAdmin() {
     document.querySelector("#modal_admin").style.display = "none";
-    document.querySelector(".x_eliminarforo").style.display = "none";
 }
 
 
@@ -267,9 +274,12 @@ function fInsertarTema(){
 }
 
 function fEliminarTemaAbrirModo(){
-    document.querySelector(".x_eliminarforo").style.display = "flex";
+    document.querySelectorAll(".x_eliminarforo").forEach(element => {
+        element.style.display = "flex";
+      });
     
     
+   
     
 }
 
@@ -309,8 +319,13 @@ function fCerrarSesion(){
     setTimeout(fCerrarModalUser, 1000);
     document.querySelector("#alias_login_header").style.display = "none";
     document.querySelector("#boton_login_header").style.display = "flex";
+    document.querySelector("#icono_admin").style.display = "none"
     document.querySelector("section").innerHTML = "";
     document.querySelector("#div_escribir_mensaje").style.display = "none"
     document.querySelector("#input_alias_login").value = "";
     document.querySelector("#input_password_login").value = "";
+    document.querySelectorAll(".x_eliminarforo").forEach(element => {
+        element.style.display = "none";
+      });
+
 }

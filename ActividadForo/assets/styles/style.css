@@ -16,6 +16,8 @@
     "zs";
 }
 
+
+
 #modal_user{
     position: fixed;
     background-color: #1F3539;
@@ -37,6 +39,11 @@
     z-index: 20;
 }
 
+#botonxuser:hover{
+    color: #0CA789;
+    font-size: 24px;
+}
+
 #cerrar_sesion{
     background-color: #0CA789;
     width: 45%;
@@ -47,6 +54,15 @@
     color: white;
     font-size: 22px;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+#cerrar_sesion:hover{
+    background-color: #075f4e;
+    width: 46%;
+    height: 130px;
+    border: 2px solid #0e181a;
+    font-size: 23px;
 }
 
 #modal_admin{
@@ -552,19 +568,35 @@ nav{
     border-radius: 10px;
 }
 
+.div_foros:hover{
+    transition: background-color 1s ease;
+    background-color: #0e181a;
+    
+}
+
+.div_foros:checked{
+    background-color: #0e181a;
+}
+
 .nombre_tema{
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
 }
 
 .x_eliminarforo{
     display: none;
     justify-content: center;
+    align-items: center;
     width: 10%;
-    padding-right: 10px;
-    color: black;
-    font-size: 800;
+    height: auto;
+    margin-right: 10px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
 }
 
 
