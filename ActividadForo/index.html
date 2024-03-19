@@ -13,6 +13,13 @@
   
 </head>
 <body id="body_index" onload="fMostrarTemas()">
+
+    <div id="modal_user">
+        <div id="botonxuser" onclick="fCerrarModalUser()">X</div>
+        <div id="cerrar_sesion" onclick="fCerrarSesion()">CERRAR SESION</div>
+    </div>
+
+
     <div id="modal_admin">
         <div id="botonxadmin" onclick="fCerrarModalAdmin()">X</div>
         <div id="div_center_admin">
@@ -135,7 +142,7 @@
             <div id="boton_login_header" onclick="fAbrirModalLogin()">
                 LOG IN
             </div>
-            <div id="alias_login_header" >
+            <div id="alias_login_header" onclick="fAbrirModalUser()">
                 
             </div>
         </div>

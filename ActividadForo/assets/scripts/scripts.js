@@ -267,9 +267,10 @@ function fInsertarTema(){
 }
 
 function fEliminarTemaAbrirModo(){
-    fCerrarModalAdmin();
     document.querySelector(".x_eliminarforo").style.display = "flex";
-    document.querySelector(".x_eliminarforo").style.color = "red";
+    
+    
+    
 }
 
 function fEliminarTema(temaid){
@@ -290,8 +291,26 @@ function fEliminarTema(temaid){
         fMostrarTemas();
     } );
 
-    
 
 }
 
+function fCerrarModalUser(){
+    document.querySelector("#modal_user").style.display = "none";
+}
 
+function fAbrirModalUser(){
+    document.querySelector("#modal_user").style.display = "flex";
+}
+
+function fCerrarSesion(){
+    log = false;
+    registrado = "";
+    img = "";
+    setTimeout(fCerrarModalUser, 1000);
+    document.querySelector("#alias_login_header").style.display = "none";
+    document.querySelector("#boton_login_header").style.display = "flex";
+    document.querySelector("section").innerHTML = "";
+    document.querySelector("#div_escribir_mensaje").style.display = "none"
+    document.querySelector("#input_alias_login").value = "";
+    document.querySelector("#input_password_login").value = "";
+}
