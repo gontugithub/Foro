@@ -39,7 +39,8 @@
 # USER ADMIN 
 
 insert into usuarios values (null, "gonzalo", "gontu", md5("gontu"), "gontu@gmail.com", "bnrinoceronte.png", 1);
-    
+insert into usuarios values (null, "admin", "admin", md5("admin"), "admin@gmail.com", "bnrinoceronte.png", 1);
+
 # CREAR USUARIO
 	DELIMITER $$
 	create procedure `crear_usuario`(IN _nombre varchar(50), IN _alias varchar(50), IN _password varchar(50), IN _email varchar(50), _foto varchar(50))

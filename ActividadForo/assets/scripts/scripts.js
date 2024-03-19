@@ -4,6 +4,12 @@ let log = false;
 let img;
 let admin = false;
 
+if(admin == true){
+    document.querySelectorAll(".x_eliminarforo").forEach(element => {
+        element.style.display = "flex";
+      });
+}
+
 function fCerrarModalLogin(){
     document.querySelector("#modal_login").style.display = "none";
     document.querySelector("#body_index").style.overflow = "scroll";
@@ -67,7 +73,7 @@ function fMostrarMensajesTema(tema_id) {
 
             for(i=0; i<data.datos.length; i++){
 
-                if(registrado == data.datos[i].usu_id){
+                if(registrado == data.datos[i].usu_id || admin == true){
                    html += `<div class="mensaje">
                    <div class="div_datos_mensaje">
                    <div class="datos_mensaje">
@@ -173,17 +179,26 @@ function fLogin(){
             document.querySelector("#alias_login_header").innerHTML = data.datos[0].usu_alias;
             document.querySelector("#boton_login_header").style.display = "none";
             log = true;
+           
 
             if(data.datos[0].usu_admin == 1){
                 document.querySelector("#icono_admin").style.display = "flex";
+                document.querySelector("#icono_eliminar").style.display = "flex";
                 fEliminarTemaAbrirModo();
-                
+                admin = true
 
             }
         }
 
     })
+    .finally ( ()=>{
+        setTimeout(fquitarmensajerror, 4000)
+    } );
 
+}
+
+function fquitarmensajerror(){
+    document.querySelector("#mensaje_error").style.display = "none";
 }
 
 function fEnviarMensaje(){
@@ -204,6 +219,7 @@ function fEnviarMensaje(){
         document.querySelector("#input_div_escribir").value = ""
 
     })
+    
 
 
 }
@@ -271,6 +287,8 @@ function fInsertarTema(){
         document.querySelector("#input_descripcion").value = "";
     } );
 
+    fEliminarTemaAbrirModo();
+
 }
 
 function fEliminarTemaAbrirModo(){
@@ -295,6 +313,8 @@ function fEliminarTema(temaid){
     .then((data) => {
 
         console.log(data);
+        console.log(fEliminarTemaAbrirModo())
+        
 
     })
     .finally ( ()=>{
@@ -316,10 +336,12 @@ function fCerrarSesion(){
     log = false;
     registrado = "";
     img = "";
+    admin = false;
     setTimeout(fCerrarModalUser, 1000);
     document.querySelector("#alias_login_header").style.display = "none";
     document.querySelector("#boton_login_header").style.display = "flex";
     document.querySelector("#icono_admin").style.display = "none"
+    document.querySelector("#icono_eliminar").style.display = "none"
     document.querySelector("section").innerHTML = "";
     document.querySelector("#div_escribir_mensaje").style.display = "none"
     document.querySelector("#input_alias_login").value = "";
@@ -327,5 +349,6 @@ function fCerrarSesion(){
     document.querySelectorAll(".x_eliminarforo").forEach(element => {
         element.style.display = "none";
       });
+    fMostrarTemas()
 
 }
