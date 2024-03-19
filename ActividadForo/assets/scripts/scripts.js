@@ -34,7 +34,12 @@ function fMostrarTemas(){
             let html = "";
 
             for(i = 0; i< data.datos.length; i++){
-                html += `<div class="div_foros" onclick="fMostrarMensajesTema(${data.datos[i].tema_id})">${data.datos[i].tema_nombre}</div>`
+                
+                html += `<div class="div_foros" onclick="fMostrarMensajesTema(${data.datos[i].tema_id})">
+                <div class="nombre_tema">${data.datos[i].tema_nombre}</div>
+                <div class="x_eliminarforo" onclick="fEliminarTema(${data.datos[i].tema_id})">X</div>
+                </div>`
+                
             }
 
             console.log(html);
@@ -222,6 +227,7 @@ function fSeleccionarImagen(imagen){
 
 function fCerrarModalAdmin() {
     document.querySelector("#modal_admin").style.display = "none";
+    document.querySelector(".x_eliminarforo").style.display = "none";
 }
 
 
@@ -254,9 +260,38 @@ function fInsertarTema(){
     })
     .finally ( ()=>{
         fMostrarTemas();
+        document.querySelector("#input_nombre_tema").value = "";
+        document.querySelector("#input_descripcion").value = "";
     } );
 
 }
 
+function fEliminarTemaAbrirModo(){
+    fCerrarModalAdmin();
+    document.querySelector(".x_eliminarforo").style.display = "flex";
+    document.querySelector(".x_eliminarforo").style.color = "red";
+}
+
+function fEliminarTema(temaid){
+
+    let URL = "assets/php/servidor.php?peticion=eliminar_tema";
+
+    URL += "&temaid=" + temaid;
+    
+
+    fetch(URL)
+    .then((response) => response.json()) 
+    .then((data) => {
+
+        console.log(data);
+
+    })
+    .finally ( ()=>{
+        fMostrarTemas();
+    } );
+
+    
+
+}
 
 

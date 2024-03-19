@@ -87,6 +87,14 @@ insert into usuarios values (null, "gonzalo", "gontu", md5("gontu"), "gontu@gmai
 	delete from mensaje where men_id = _menid$$
 	DELIMITER ;
 
+# ELIMINAR TEMA
+
+	DELIMITER $$
+	create procedure `eliminar_tema`(IN _temaid int)
+	DELETE FROM temas WHERE tema_id = _temaid$$
+	DELIMITER ;
+
+
 
 	
     

@@ -66,6 +66,14 @@ if (isset($_REQUEST['peticion'])) {
             echo json_encode($datos);      
             break;
 
+        case "eliminar_tema":
+            $temaid = $_REQUEST['temaid'];
+            $sql = "call eliminar_tema('$temaid')";
+            $datos['sql'] = $sql;
+            $datos['datos'] = BBDD_CTRLR::CRUD($sql,'');
+            echo json_encode($datos);      
+            break;
+
 
     }        
 }
